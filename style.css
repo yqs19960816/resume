@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: black;
+  color: #fff;
+}
+a {
+  text-decoration: none;
+}
+
+.topNavBar > a .rs {
+  color: #e8676b;
+  font-family: "Arial Black";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  margin-right: 3px; 
+  line-height: 43px;
+}
+
+.topNavBar > a .card {
+  font-family: "Arial Black";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  color: #9A9DA2;
+  line-height: 43px;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  line-height: 0;
+  clear: both;
+}
+.topNavBar {
+  height: 43px;
+  padding: 20px 16px 20px 16px;
+}
+.topNavBar ul li a {
+  font-size: 13px;
+  font-family: "Open Sans";
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 700;
+  line-height: 1;
+  padding-top: 5px;
+  padding-bottom: 5px; 
+  display: block;
+}
+.topNavBar ul li a:hover {
+  border-bottom: 3px solid #e8676b;
+}
+.topNavBar ul li {
+  float: left;
+  margin-right: 24px;
+  margin-left: 24px;
+  height: 43px;
+}
+.topNavBar ul {
+  list-style: none;
+}
+.logo {
+  float: left;
+}
+nav {
+  float: right;
+}
