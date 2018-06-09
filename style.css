@@ -2,33 +2,22 @@
   margin: 0;
   padding: 0;
 }
-body {
-  background-color: black;
-  color: #fff;
+
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
+body {
+  background-color: #EFEFEF;
+  color: black;
+}
+
 a {
   text-decoration: none;
+  color: #fff;
 }
-
-.topNavBar > a .rs {
-  color: #e8676b;
-  font-family: "Arial Black";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  margin-right: 3px; 
-  line-height: 43px;
-}
-
-.topNavBar > a .card {
-  font-family: "Arial Black";
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  color: #9A9DA2;
-  line-height: 43px;
-}
-
 .clearfix:after {
   content: "";
   display: block;
@@ -37,10 +26,60 @@ a {
   line-height: 0;
   clear: both;
 }
+
+hr {
+ height: 0;
+ border: none;
+ border-top: 1px solid #DEDEDE;
+}
 .topNavBar {
   height: 43px;
-  padding: 20px 16px 20px 16px;
+  padding: 20px 0 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
+
+.topNavBar-inner {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.logo {
+  float: left;
+}
+
+.topNavBar-inner>a .rs {
+  color: #e8676b;
+  font-family: "Arial Black";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  margin-right: 3px;
+  line-height: 43px;
+}
+
+.topNavBar-inner>a .card {
+  font-family: "Arial Black";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  color: #9a9da2;
+  line-height: 43px;
+}
+
+.topNavBar ul li {
+  float: left;
+  margin-right: 24px;
+  margin-left: 24px;
+  height: 43px;
+}
+
+nav {
+  float: right;
+}
+
 .topNavBar ul li a {
   font-size: 13px;
   font-family: "Open Sans";
@@ -48,24 +87,131 @@ a {
   font-weight: 700;
   line-height: 1;
   padding-top: 5px;
-  padding-bottom: 5px; 
+  padding-bottom: 5px;
   display: block;
 }
+
 .topNavBar ul li a:hover {
   border-bottom: 3px solid #e8676b;
 }
-.topNavBar ul li {
-  float: left;
-  margin-right: 24px;
-  margin-left: 24px;
-  height: 43px;
-}
+
 .topNavBar ul {
   list-style: none;
 }
-.logo {
+
+.banner {
+  background-image: url(./images/rs-cover-2-2-1-1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 515px;
+  width: 100%;
+}
+
+.banner .mask {
+  height: 515px;
+  background-color: rgba(0, 0, 20, 0.7);
+}
+
+.userCard .picture {
   float: left;
 }
-nav {
-  float: right;
+
+.userCard .text {
+  float: left;
+  margin-left: 65px;
+  width: 518px;
 }
+
+.userCard {
+  max-width: 930px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+
+.userCard .welcome {
+  background-color: #e8676b;
+  color: #fff;
+  display: inline-block;
+  /* width: 70px;
+  height: 29px;
+  line-height: 29px;
+  text-align: center; */
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.1;
+  padding: 5px 15px;
+  position: relative;
+  margin-bottom: 29px;
+  text-transform: uppercase;
+}
+
+.userCard .pictureAndText {
+  padding: 40px 50px;
+}
+
+.welcome .triangle {
+  display: inline-block;
+  border: 9px solid transparent;
+  width: 0px;
+  height: 0px;
+  border-top-width: 0px;
+  border-left-color: #e8676b;
+  position: absolute;
+  top: 100%;
+  left: 10px;
+}
+
+.userCard .text h1 {
+  margin-bottom: 10px;
+}
+
+.userCard .text p {
+  margin-bottom: 18px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.userCard .text hr {
+  margin-bottom: 32px;
+}
+.userCard .text dt,
+.userCard .text dd{
+  float: left;
+  margin-bottom: 15px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #333333;
+}
+.userCard .text dd{
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #9da0a7;
+  width: 70%;
+}
+.userCard .text dt{
+  width: 30%;
+}
+.userCard > footer.media{
+background-color: #E8676B;
+text-align: center;
+padding: 25px 0px;
+}
+.userCard svg {
+  width: 20px;
+  height: 20px;
+  fill: white;
+
+}
+.userCard > footer.media > a{
+  margin: 0px 40px;
+  display: inline-block;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  }
+  .userCard > footer.media > a:hover{
+    background-color: rgba(0,0,0,0.1);
+  }
