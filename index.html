@@ -3,12 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
+  <base target="_blank">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://at.alicdn.com/t/font_701076_x884vlms3ys0pb9.js"></script>
 </head>
+
 <body>
   <div class="topNavBar">
     <div class="topNavBar-inner clearfix">
@@ -28,7 +30,7 @@
             <a href="#">作品</a>
           </li>
           <li>
-            <a href="#">博客</a>
+            <a href="https://yqs19960816.github.io/">博客</a>
           </li>
           <li>
             <a href="#">日历</a>
@@ -81,63 +83,113 @@
         <a href="#">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-zhihu"></use>
-        </svg>
+          </svg>
         </a>
         <a href="#">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-CN_jianshu"></use>
-        </svg>
+          </svg>
         </a>
-        <a href="#">
+        <a href="https://github.com/yqs19960816">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-github"></use>
-        </svg>
+          </svg>
         </a>
         <a href="#">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-weibo"></use>
-        </svg>
+          </svg>
         </a>
         <a href="#">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-tuitetwitter43"></use>
-        </svg>
+          </svg>
         </a>
       </footer>
     </div>
-
-    <a class="button" href="#">下载 PDF 简历</a>
-
-    <p>
+    <p class="downloadResume">
+      <a class="button" href="#">下载 PDF 简历</a>
+    </p>
+    <p class="selfIntroduction">
       方应杭， 资深前端工程师，资深前端讲师，现在在 饥人谷 教前端课程。
       <br> 技能：前端开发，Rails 开发，Node.js 开发
     </p>
 
+    <section class="skills">
+      <h2>技能</h2>
+      <ol class="clearfix">
+        <li>
+          <h3>HTML 5 &amp; CSS 3</h3>
+          <div class="progressBar">
+            <div class="progress" style="width:95%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>JavaScript</h3>
+          <div class="progressBar">
+            <div class="progress" style="width:90%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>jQuery</h3>
+          <div class="progressBar">
+            <div class="progress" style="width:85%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>Vue</h3>
+          <div class="progressBar">
+            <div class="progress" style="width:60%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>React</h3>
+          <div class="progressBar">
+            <div class="progress" style="width:50%"></div>
+          </div>
+        </li>
+        <li>
+          <h3>HTTP</h3>
+          <div class="progressBar">
+            <div class="progress" style="width:80%"></div>
+          </div>
+        </li>
+      </ol>
+    </section>
+    <section class="Portfolio">
+      <h2>作品集</h2>
+      <nav>
+      <ol class="clearfix">
+        <li id="PortfolioAll">所有</li>
+        <li id="PortfolioFramework">框架</li>
+        <li id="PortfolioVallina">原生JS&amp;CSS</li>
+      </ol>
+      <div  id="PortfolioBar" class="bar state-1">
+        <div class="bar-inner"></div>
+      </div>
+    </nav>
+    <script>
+    PortfolioAll.onclick = function(){
+      PortfolioBar.className = 'bar state-1';
+    }
+    PortfolioFramework.onclick = function(){
+      PortfolioBar.className = 'bar state-2';
+    }
+    PortfolioVallina.onclick = function(){
+      PortfolioBar.className = 'bar state-3';
+    }
+    
+    
+    
+    </script>
   </main>
-  <section>
-    <h2>技能</h2>
-    <ol>
-      <li>HTML 5 &amp; CSS 3</li>
-      <li>JavaScript</li>
-      <li>jQuery</li>
-      <li>Vue</li>
-      <li>React</li>
-      <li>HTTP</li>
-    </ol>
-  </section>
-  <section>
-    <h2>作品集</h2>
-    <ol>
-      <li>所有</li>
-      <li>框架</li>
-      <li>原生JS&amp;CSS</li>
-    </ol>
 
-    <div class="jobs">
-      <div class="big"></div>
-      <div class="small"></div>
-      <div class="small"></div>
-    </div>
+
+  <div class="jobs">
+    <div class="big"></div>
+    <div class="small"></div>
+    <div class="small"></div>
+  </div>
 
   </section>
 </body>

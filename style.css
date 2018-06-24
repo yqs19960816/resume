@@ -1,14 +1,17 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .icon {
-  width: 1em; height: 1em;
+  width: 1em;
+  height: 1em;
   vertical-align: -0.15em;
   fill: currentColor;
   overflow: hidden;
 }
+
 body {
   background-color: #EFEFEF;
   color: black;
@@ -18,6 +21,7 @@ a {
   text-decoration: none;
   color: #fff;
 }
+
 .clearfix:after {
   content: "";
   display: block;
@@ -28,10 +32,11 @@ a {
 }
 
 hr {
- height: 0;
- border: none;
- border-top: 1px solid #DEDEDE;
+  height: 0;
+  border: none;
+  border-top: 1px solid #DEDEDE;
 }
+
 .topNavBar {
   height: 43px;
   padding: 20px 0 20px 0;
@@ -76,7 +81,7 @@ hr {
   height: 43px;
 }
 
-nav {
+.topNavBar > .topNavBar-inner > nav {
   float: right;
 }
 
@@ -127,6 +132,7 @@ nav {
   max-width: 930px;
   margin: 0 auto;
   background-color: #fff;
+  box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.3);
 }
 
 .userCard .welcome {
@@ -172,11 +178,13 @@ nav {
   font-weight: 400;
   line-height: 1.1;
 }
+
 .userCard .text hr {
   margin-bottom: 32px;
 }
+
 .userCard .text dt,
-.userCard .text dd{
+.userCard .text dd {
   float: left;
   margin-bottom: 15px;
   font-size: 15px;
@@ -184,32 +192,167 @@ nav {
   line-height: 15px;
   color: #333333;
 }
-.userCard .text dd{
+
+.userCard .text dd {
   color: #9da0a7;
   width: 70%;
 }
-.userCard .text dt{
+
+.userCard .text dt {
   width: 30%;
 }
-.userCard > footer.media{
-background-color: #E8676B;
-text-align: center;
-padding: 25px 0px;
+
+.userCard>footer.media {
+  background-color: #E8676B;
+  text-align: center;
+  padding: 25px 0px;
 }
+
 .userCard svg {
   width: 20px;
   height: 20px;
   fill: white;
-
 }
-.userCard > footer.media > a{
+
+.userCard>footer.media>a {
   margin: 0px 40px;
   display: inline-block;
   border-radius: 50%;
   width: 40px;
   height: 40px;
   line-height: 40px;
-  }
-  .userCard > footer.media > a:hover{
-    background-color: rgba(0,0,0,0.1);
-  }
+  transition:0.2s;
+}
+
+.userCard>footer.media>a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+body>main {
+  margin-top: -340px;
+}
+
+body>main .button {
+  border: 1px solid #CDCFD1;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16px;
+  padding: 21px 55px;
+  color: #3D4451;
+  border-radius: 2%;
+  margin-top: 45px;
+  transition: box-shadow 0.3s;
+}
+
+body>main .downloadResume {
+  text-align: center;
+}
+
+body>main .button:hover {
+  box-shadow: 0px 3px 13px -3px rgba(0,0,0,0.75);
+}
+
+.selfIntroduction {
+  max-width: 930px;
+  margin: 20px auto;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+}
+
+section.skills {
+  max-width: 930px;
+  margin: 0px auto;
+  margin-top: 60px;
+  margin-bottom: 76px;
+}
+section.Portfolio > h2,
+section.skills>h2 {
+  color: #3d4451;
+  font-size: 34px;
+  line-height: 1.2;
+  font-weight: 600;
+  text-align: center;
+}
+
+section.skills>ol {
+  background: white;
+  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.55);
+  list-style: none;
+  margin-top: 30px;
+  padding: 42px 50px 10px;
+}
+section.skills > ol > li:nth-child(even) {
+  padding-left:18px; 
+}
+section.skills li {
+  float: left;
+  width: 50%;
+}
+section.skills  h3 {
+  font-family: "Open Sans";
+  line-height: 1.1;
+  font-size: 14px;
+  font-weight: 400;
+}
+section.skills .progressBar{
+  height: 5px;
+  background-color: #FAE1E1;
+  border-radius: 5px;
+  margin: 4px 0 40px;
+}
+section.skills .progressBar > .progress{
+  height: 5px;
+  border-radius: 2px;
+  background-color: #E8676B;
+  width: 70%; 
+}
+section.Portfolio {
+  text-align: center;
+}
+section.Portfolio > nav {
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 100px; 
+}
+section.Portfolio > nav > ol{
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 35px;
+}
+section.Portfolio > nav > ol > li{
+  float: left;
+  list-style: none;
+  margin-left: 40px;
+  cursor: pointer;
+}
+section.Portfolio > nav > ol > li:first-child{
+  margin-left: 0;
+} 
+section.Portfolio > nav > .bar {
+  margin-top: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+section.Portfolio > nav > .bar > .bar-inner{
+  height: 100%;
+  border-radius: 2px;
+  background-color: #E8676B;
+  transition: all 1s;
+}
+section.Portfolio > nav > .bar.state-1 > .bar-inner{
+  width: 15%;
+  margin-left: 0;
+}
+section.Portfolio > nav > .bar.state-2 > .bar-inner{
+  width: 15%;
+  margin-left: 73px;
+}
+section.Portfolio > nav > .bar.state-3 > .bar-inner{
+  width: 35%;
+  margin-left: 145px;
+}
