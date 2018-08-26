@@ -9,79 +9,42 @@
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://at.alicdn.com/t/font_701076_x884vlms3ys0pb9.js"></script>
-  <style type="text/css">
-  .site-welcome {
-    display: none;
-    position: fixed;
-    top: 0;left: 0;width: 100%;height: 100%;
-    background: #ccc;
-    z-index: 1;
-    justify-content: center;
-    align-items: center;
-  }
-  .site-welcome.active {
-    display: flex;
-
-  }
-  .loading {
-    width: 200px;
-    height: 200px;
-    position: relative;
-}
-
-.loading::before,.loading::after {
-    content: '';
-    position: absolute;
-    width: 0px;
-    height: 0px;
-    background: black;
-    border-radius: 50%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    animation: s 1.5s linear infinite;
-}
-.loading::after{
-    animation-delay: 0.75s;
-}
-
-@keyframes s{
-    0%{
-        width: 0px; height: 0px;opacity: 1;
-    }
-    100%{
-        width: 100px;height: 100px;opacity: 0;
-    }
-}
-  </style>
 </head>
 
 <body>
   <div id="siteWelcome" class="site-welcome active">
-      <div class="loading"></div>
+    <div class="loading"></div>
   </div>
 
-    <div class="topNavBar">
+  <div id="topNavBar" class="topNavBar clearfix">
+    <a class="logo" href="#" alt="logo">
+      <span class="rs">RS</span>
+      <span class="card">card</span>
+    </a>
     <div class="topNavBar-inner clearfix">
-      <a class="logo" href="#" alt="logo">
-        <span class="rs">RS</span>
-        <span class="card">card</span>
-      </a>
       <nav>
-        <ul class="clearfix">
+        <ul class="clearfix" id="item">
           <li>
-            <a href="#">关于</a>
+            <a href="userCard">关于</a>
           </li>
           <li>
-            <a href="#">技能</a>
+            <a href="skills">技能</a>
           </li>
-          <li>
-            <a href="#">作品</a>
+          <li class="menuTigger">
+            <a href="Portfolio">作品</a>
+            <ul class="submenu">
+              <li>作品1</li>
+              <li>作品2</li>
+              <li>作品3</li>
+            </ul>
           </li>
-          <li>
-            <a href="https://yqs19960816.github.io/">博客</a>
+          <li class="menuTigger">
+            <a href=#>博客</a>
+            <ul class="submenu">
+              <li>博客1</li>
+              <li>博客2</li>
+              <li>博客3</li>
+            </ul>
           </li>
           <li>
             <a href="#">日历</a>
@@ -207,45 +170,109 @@
         </li>
       </ol>
     </section>
-    <section class="Portfolio">
+    <section class="Portfolio" id="siteWorks">
       <h2>作品集</h2>
       <nav>
-      <ol class="clearfix">
-        <li id="PortfolioAll">所有</li>
-        <li id="PortfolioFramework">框架</li>
-        <li id="PortfolioVallina">原生JS&amp;CSS</li>
-      </ol>
-      <div  id="PortfolioBar" class="bar state-1">
-        <div class="bar-inner"></div>
+        <ol class="clearfix">
+          <li id="PortfolioAll">所有</li>
+          <li id="PortfolioFramework">框架</li>
+          <li id="PortfolioVallina">原生JS&amp;CSS</li>
+        </ol>
+        <div id="PortfolioBar" class="bar state-1">
+          <div class="bar-inner"></div>
+        </div>
+      </nav>
+
+  <div class="works" style="height: 597px;">
+      <div class="big" style="top: 0; left: 0;">
+        <img src="./images/1.jpg" alt="作品1">
       </div>
-    </nav>
-    <script>
-    PortfolioAll.onclick = function(){
-      PortfolioBar.className = 'bar state-1';
-    }
-    PortfolioFramework.onclick = function(){
-      PortfolioBar.className = 'bar state-2';
-    }
-    PortfolioVallina.onclick = function(){
-      PortfolioBar.className = 'bar state-3';
-    }
-    
-    
-    
-    </script>
-  </main>
-
-
-  <div class="jobs">
-    <div class="big"></div>
-    <div class="small"></div>
-    <div class="small"></div>
-  </div>
+      <div class="small" style="top: 0; left: 645px;">
+        <img src="./images/2.jpg" alt="作品2">
+      </div>
+      <div class="small" style="top: 312px; left: 645px;">
+        <img src="./images/3.jpg" alt="作品3">
+      </div>
+    </div>
 
   </section>
   <script>
-  siteWelcome.classList.remove("active");
-  
+    var lead;
+    //点击导航栏切换浮动bar
+     PortfolioAll.onclick = function () {
+        PortfolioBar.className = 'bar state-1';
+      }
+      PortfolioFramework.onclick = function () {
+        PortfolioBar.className = 'bar state-2';
+      }
+      PortfolioVallina.onclick = function () {
+        PortfolioBar.className = 'bar state-3';
+      }
+    //延迟加载动画
+    setTimeout(function () {
+      siteWelcome.classList.remove("active");
+    }, 1000);
+    //页面滚动导航栏变色
+    window.onscroll = function () {
+      if (window.scrollY > 128) {
+        topNavBar.classList.add('sticky');
+      } else {
+        topNavBar.classList.remove('sticky');
+      }
+         ///每当页面滚动记录其滚动距离顶部的距离
+      var lend = window.scrollY;
+      //兼容写法
+      lead = document.body.scrollTop||window.pageYOffset||document.documentElement.scrollTop;
+      console.log("window.scrollY:"+lend);
+      console.log("scrollTop："+lead);
+    }
+    //点击顶部导航栏切换到指定位置
+    let lis = document.getElementById('item').getElementsByTagName('li');
+    let aTags = document.getElementById('item').getElementsByTagName('a');
+    for(let i=0;i<aTags.length;i++){
+      aTags[i].onclick = function(x){
+        x.preventDefault();
+        let a = aTags[i].getAttribute('href');
+        let b = document.querySelectorAll('.'+a)[0];
+        window.scrollTo(0,b.offsetTop-60);
+      }
+    }
+     //顶部导航栏鼠标切换变色
+    for (let i = 0; i < lis.length; i++) {
+      let a;
+      lis[i].onmouseenter = function (x) {
+        a = x.currentTarget.style.color;
+        x.currentTarget.style.color = '#F00';
+        x.currentTarget.classList.add('active');
+      };
+      lis[i].onmouseleave = function (x) {
+        x.currentTarget.style.color = a;
+        x.currentTarget.classList.remove('active');
+
+      };
+    }
+    //两个导航窗口隔行变色
+    let items = document.getElementsByClassName('submenu')[0].getElementsByTagName('li');
+    let item = document.getElementsByClassName('submenu')[1].getElementsByTagName('li');
+    for (let i = 0; i < items.length; i++) {
+      let color = items[0].style.backgroundColor;
+      items[i].onmouseenter = function (x) {
+        x.currentTarget.style.backgroundColor = '#FFF';
+      };
+      items[i].onmouseleave = function (x) {
+        x.currentTarget.style.backgroundColor = color;
+      };
+    }
+    for (let i = 0; i < item.length; i++) {
+      let color = item[0].style.backgroundColor;
+      item[i].onmouseenter = function (x) {
+        x.currentTarget.style.backgroundColor = '#FFF';
+      };
+      item[i].onmouseleave = function (x) {
+        x.currentTarget.style.backgroundColor = color;
+      };
+    }
+    
   </script>
 </body>
 
