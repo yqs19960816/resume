@@ -66,7 +66,6 @@ hr {
 .loading::after{
   animation-delay: 0.5s;
 }
-
 @keyframes s{
   0%{
       width: 0px; height: 0px;opacity: 1;
@@ -74,6 +73,13 @@ hr {
   100%{
       width: 100px;height: 100px;opacity: 0;
   }
+}
+[data-x].offset {
+  transform: translateY(120px);
+}
+[data-x] {
+  transform: translateY(0);
+  transition: all 1s;
 }
 .topNavBar {
   height: 43px;
@@ -83,6 +89,7 @@ hr {
   width: 100%;
   transition: all 0.5s;
   color: #9da0a7;
+  cursor: pointer;
 }
 .topNavBar.sticky{
   background: #FFF;
@@ -172,7 +179,8 @@ hr {
   display: block;
   position: relative;
 }
-.topNavBar ul li.active a::after {
+.topNavBar ul li.active a::after,
+.topNavBar ul li.highlight a::after {
   content: '';
   display: block;
   position: absolute;
@@ -403,6 +411,7 @@ section.skills .progressBar {
   background-color: #FAE1E1;
   border-radius: 5px;
   margin: 4px 0 40px;
+  overflow: hidden;
 }
 
 section.skills .progressBar>.progress {
@@ -410,8 +419,13 @@ section.skills .progressBar>.progress {
   border-radius: 2px;
   background-color: #E8676B;
   width: 70%;
+  transform: translateX(0);
+  transition: all 2s;
+ 
 }
-
+section.skills.offset .progress {
+  transform: translateX(-100%)
+}
 section.Portfolio {
   text-align: center;
   margin-bottom: 100px;
