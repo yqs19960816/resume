@@ -30,6 +30,27 @@ hr {
   border-top: 1px solid #DEDEDE;
 }
 
+.swiper-container {
+  width: 800px;
+  height: 500px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+} 
+.swiper-button-prev,
+.swiper-button-next {
+  color: rgb(0, 122, 255);
+  top: 58%;
+  background-color: #DDD;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+.swiper-button-prev {
+  left: -10px;
+}
+.swiper-button-next {
+  right: -10px;
+}
 .site-welcome {
   display: none;
   position: fixed;
@@ -207,7 +228,7 @@ hr {
 }
 
 .banner {
-  background-image: url(./images/rs-cover-2-2-1-1.jpg);
+  background-image: url(./images/wallhaven-488322.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -217,7 +238,7 @@ hr {
 
 .banner .mask {
   height: 515px;
-  background-color: rgba(0, 0, 20, 0.7);
+  background-color: rgba(0, 0, 20, 0.5);
 }
 
 .userCard .picture {
@@ -434,8 +455,12 @@ section.Portfolio {
 section.Portfolio>nav {
   display: inline-block;
   vertical-align: top;
-  margin-top: 32px;
+  margin: 32px;
   text-align: center;
+  font-family: "Open Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
 }
 
 section.Portfolio>nav>ol {
@@ -455,33 +480,5 @@ section.Portfolio>nav>ol>li:first-child {
   margin-left: 0;
 }
 
-section.Portfolio>nav>.bar {
-  margin-top: 5px;
-  height: 5px;
-  background-color: #fff;
-  border-radius: 2px;
-}
-
-section.Portfolio>nav>.bar>.bar-inner {
-  height: 100%;
-  border-radius: 2px;
-  background-color: #E8676B;
-  transition: all 0.3s;
-}
-
-section.Portfolio>nav>.bar.state-1>.bar-inner {
-  width: 15%;
-  margin-left: 0;
-}
-
-section.Portfolio>nav>.bar.state-2>.bar-inner {
-  width: 15%;
-  margin-left: 73px;
-}
-
-section.Portfolio>nav>.bar.state-3>.bar-inner {
-  width: 35%;
-  margin-left: 152px;
-}
 section.Portfolio .works{ position: relative;margin-top:30px;  } 
 section.Portfolio .works > .big, section.Portfolio .works > .small { position: absolute; }

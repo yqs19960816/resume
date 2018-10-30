@@ -7,9 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>个人简历</title>
-  <link rel="stylesheet" href="style.css">
   <script src="https://at.alicdn.com/t/font_701076_x884vlms3ys0pb9.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -72,18 +72,18 @@
     <div class="userCard" data-x id="userCard">
       <div class="pictureAndText clearfix">
         <div class="picture">
-          <img src="./images/startuper-hover-1-299x347.jpg" alt="头像" width="247" height="299">
+          <img src="./images/222.jpg" alt="头像" width="247" height="299">
         </div>
         <div class="text">
           <span class="welcome">Hello
             <span class="triangle"></span>
           </span>
-          <h1>方应杭</h1>
+          <h1>杨青松</h1>
           <p>前端开发工程师</p>
           <hr>
           <dl>
             <dt>年龄</dt>
-            <dd>18</dd>
+            <dd>22</dd>
             <dt>所在城市</dt>
             <dd>北京</dd>
             <dt>邮箱</dt>
@@ -135,25 +135,25 @@
         <li>
           <h3>HTML 5 &amp; CSS 3</h3>
           <div class="progressBar">
-            <div class="progress" style="width:80%"></div>
+            <div class="progress" style="width:60%"></div>
           </div>
         </li>
         <li>
           <h3>JavaScript</h3>
           <div class="progressBar">
-            <div class="progress" style="width:75%"></div>
+            <div class="progress" style="width:65%"></div>
           </div>
         </li>
         <li>
           <h3>jQuery</h3>
           <div class="progressBar">
-            <div class="progress" style="width:65%"></div>
+            <div class="progress" style="width:50%"></div>
           </div>
         </li>
         <li>
           <h3>Vue</h3>
           <div class="progressBar">
-            <div class="progress" style="width:50%"></div>
+            <div class="progress" style="width:40%"></div>
           </div>
         </li>
         <li>
@@ -165,7 +165,7 @@
         <li>
           <h3>HTTP</h3>
           <div class="progressBar">
-            <div class="progress" style="width:60%"></div>
+            <div class="progress" style="width:30%"></div>
           </div>
         </li>
       </ol>
@@ -174,29 +174,31 @@
       <h2>作品集</h2>
       <nav>
         <ol class="clearfix">
-          <li id="PortfolioAll">所有</li>
-          <li id="PortfolioFramework">框架</li>
-          <li id="PortfolioVallina">原生JS&amp;CSS</li>
+          <li id="PortfolioAll">AppleRotation</li>
+          <li id="PortfolioFramework">canvasPainter</li>
+          <li id="PortfolioVallina">NavigationWebsite</li>
         </ol>
-        <div id="PortfolioBar" class="bar state-1">
-          <div class="bar-inner"></div>
-        </div>
       </nav>
-
-      <div class="works" style="height: 597px;">
-        <div class="big" style="top: 0; left: 0;">
-          <img src="./images/1.jpg" alt="作品1">
-        </div>
-        <div class="small" style="top: 0; left: 645px;">
-          <img src="./images/2.jpg" alt="作品2">
-        </div>
-        <div class="small" style="top: 312px; left: 645px;">
-          <img src="./images/3.jpg" alt="作品3">
-        </div>
+      <!-- 变成轮播，使用插件 -->
+      <div class="swiper-container">
+          <div class="swiper-wrapper">
+              <img src="./images/work/Apple-rotation.jpg" class="swiper-slide">
+              <img src="./images/work/canvas-demo.jpg" class="swiper-slide">
+              <img src="./images/work/nav-page.jpg" class="swiper-slide">
+          </div>
+          <!-- 如果需要分页器 -->
+          <div class="swiper-pagination"></div>
+          
+          <!-- 如果需要滚动条 -->
+          <!-- <div class="swiper-scrollbar"></div> -->
       </div>
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
 
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
     <script>
       //页面当前Y轴位置
       var lead = 0;
@@ -350,6 +352,29 @@
         };
       }
     </script>
+    <script>        
+        var mySwiper = new Swiper ('.swiper-container', {
+          // direction: 'vertical', // 垂直切换选项
+          loop: true, // 循环模式选项
+          autoplay:true,
+          
+          // 如果需要分页器
+          pagination: {
+            el: '.swiper-pagination',
+          },
+          
+          // 如果需要前进后退按钮
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          
+          // 如果需要滚动条
+          // scrollbar: {
+          //   el: '.swiper-scrollbar',
+          // },
+        })        
+        </script>
 </body>
 
 </html>
