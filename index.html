@@ -30,17 +30,17 @@
           <li class="menuTigger">
             <a href="Portfolio">作品</a>
             <ul class="submenu">
-              <li>作品1</li>
-              <li>作品2</li>
-              <li>作品3</li>
+              <li>苹果轮播</li>
+              <li>Canvas画板</li>
+              <li>导航网站</li>
             </ul>
           </li>
           <li class="menuTigger">
-            <a href=#>博客</a>
+            <a href="#">博客</a>
             <ul class="submenu">
-              <li>博客1</li>
-              <li>博客2</li>
-              <li>博客3</li>
+              <li>JS数据类型</li>
+              <li>原型链</li>
+              <li>AJAX</li>
             </ul>
           </li>
           <li>
@@ -85,11 +85,11 @@
             <dt>年龄</dt>
             <dd>22</dd>
             <dt>所在城市</dt>
-            <dd>北京</dd>
+            <dd>广东</dd>
             <dt>邮箱</dt>
-            <dd>fangyinghang@foxmail.com</dd>
+            <dd>1260013987@qq.com</dd>
             <dt>手机</dt>
-            <dd>13812345678</dd>
+            <dd>17620913420</dd>
           </dl>
         </div>
       </div>
@@ -179,202 +179,38 @@
           <li id="PortfolioVallina">NavigationWebsite</li>
         </ol>
       </nav>
-      <!-- 变成轮播，使用插件 -->
-      <div class="swiper-container">
+      <!-- MVC中的vivw视图 -->
+      <div id="mySlides">
+        <!-- 变成轮播，使用插件 -->
+        <div class="swiper-container">
           <div class="swiper-wrapper">
-              <img src="./images/work/Apple-rotation.jpg" class="swiper-slide">
-              <img src="./images/work/canvas-demo.jpg" class="swiper-slide">
-              <img src="./images/work/nav-page.jpg" class="swiper-slide">
+            <img src="./images/work/Apple-rotation.jpg" class="swiper-slide">
+            <img src="./images/work/canvas-demo.jpg" class="swiper-slide">
+            <img src="./images/work/nav-page.jpg" class="swiper-slide">
           </div>
           <!-- 如果需要分页器 -->
           <div class="swiper-pagination"></div>
-          
+
           <!-- 如果需要滚动条 -->
           <!-- <div class="swiper-scrollbar"></div> -->
+        </div>
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
-                <!-- 如果需要导航按钮 -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
-    <script>
-      //页面当前Y轴位置
-      var lead = 0;
-      //点击导航栏切换浮动bar
-      PortfolioAll.onclick = function () {
-        PortfolioBar.className = 'bar state-1';
-      }
-      PortfolioFramework.onclick = function () {
-        PortfolioBar.className = 'bar state-2';
-      }
-      PortfolioVallina.onclick = function () {
-        PortfolioBar.className = 'bar state-3';
-      }
-      //延迟加载动画
-      var bb = setTimeout(function () {
-        siteWelcome.classList.remove("active");
-        window.scrollTo(0, 0);
-        clearTimeout(bb);
-      }, 500);
-      let specialTags = document.querySelectorAll('[data-x]');
-      //给每个[data-x]元素添加offset类
-      for (let i = 0; i < specialTags.length; i++) {
-        specialTags[i].classList.add("offset");
-      }
-      //延迟500毫秒清除离浏览器窗口最近的元素的offset类
-      setTimeout(function () {
-        findClosest();
-      }, 500);
-
-      function findClosest() {
-        //获取带有data-x的元素
-        let specialTags = document.querySelectorAll('[data-x]');
-        //获取添加data-x的元素的offsetTop值
-        let minIndex = 0;
-        for (let i = 0; i < specialTags.length; i++) {
-          //页面滚动获取距离浏览器视口顶部最近的元素（元素距离文档顶部距离-当前文档距离顶部距离=元素距离视口的高度)
-          if (Math.abs(specialTags[i].offsetTop - lead) < Math.abs(specialTags[minIndex].offsetTop - lead)) {
-            minIndex = i;
-          }
-        }
-        //给距离浏览器窗口最近的元素移除offset类
-        specialTags[minIndex].classList.remove("offset");
-        //根据当前距离顶部最近的元素的ID名找到对应的a标签
-        let id = specialTags[minIndex].id;
-        let a = document.querySelector('a[href="' + id + '"]')
-        //再找到该a标签的父亲的兄弟姐妹
-        let li = a.parentNode;
-        for (let i = 0; i < li.parentNode.children.length; i++) {
-          li.parentNode.children[i].classList.remove('highlight');
-        }
-        li.classList.add('highlight');
-      }
-
-      //页面滚动导航栏背景变色
-      window.onscroll = function () {
-        if (window.scrollY > 128) {
-          topNavBar.classList.add('sticky');
-        } else {
-          topNavBar.classList.remove('sticky');
-        }
-        ///每当页面滚动记录其滚动距离顶部的距离,起始位置Y值,兼容写法
-        lead = document.body.scrollTop || window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
-        console.log("页面滚动距离顶部的距离" + Math.ceil(lead) + "px");
-        //页面每次滚动都会找到最近的元素并清除offset类
-        findClosest();
-      }
-      //点击顶部导航栏页面切换到指定位置
-      let lis = document.getElementById('item').getElementsByTagName('li');
-      let aTags = document.getElementById('item').getElementsByTagName('a');
-      for (let i = 0; i < aTags.length; i++) {
-        aTags[i].onclick = function (x) {
-          x.preventDefault();
-          let element = aTags[i].getAttribute('href');
-          //页面中获取对应元素offsetTop值
-          let top = document.querySelectorAll('.' + element)[0].offsetTop;
-          //目标位置Y值
-          let targetTop = top - 60;
-          //获取步长
-          // let sped = (targetTop - lead) > 0 ? Math.ceil((targetTop - lead) / 15) :
-          //   Math.floor((targetTop - lead) / 10);
-          // let time = setInterval(() => {
-          //   //每次移动到（当前位置加步长）慢慢接近目标位置
-          //   window.scrollTo(0, lead + sped);
-          //   console.log(targetTop);
-          //   if (Math.abs(targetTop - lead) <= Math.abs(sped)) {
-          //     window.scrollTo(0, targetTop);
-          //     clearInterval(time);
-          //   }
-          // }, 50);
-          let t = Math.abs(targetTop - lead) / 100; // 路程
-          let s = t * 300 // 时间
-          if (s > 500) {
-            s = 500
-          }
-
-          function animate(time) {
-            requestAnimationFrame(animate);
-            TWEEN.update(time);
-          }
-          requestAnimationFrame(animate);
-
-          var coords = {
-            y: lead //起始位置
-          };
-          var tween = new TWEEN.Tween(coords)
-            .to({
-              y: targetTop
-            }, s)
-            .easing(TWEEN.Easing.Quadratic.InOut) //缓动类型
-            .onUpdate(function () {
-              window.scrollTo(0, coords.y); //如何滚动页面
-              console.log("缓动Y值", coords.y);
-            })
-            .start(); //开始缓动
-        }
-      }
-      //顶部导航栏鼠标切换变色
-      for (let i = 0; i < lis.length; i++) {
-        let a;
-        lis[i].onmouseenter = function (x) {
-          a = x.currentTarget.style.color;
-          x.currentTarget.style.color = '#F00';
-          x.currentTarget.classList.add('active');
-        };
-        lis[i].onmouseleave = function (x) {
-          x.currentTarget.style.color = a;
-          x.currentTarget.classList.remove('active');
-
-        };
-      }
-      //两个滑动窗口隔行变色
-      let items = document.getElementsByClassName('submenu')[0].getElementsByTagName('li');
-      let item = document.getElementsByClassName('submenu')[1].getElementsByTagName('li');
-      for (let i = 0; i < items.length; i++) {
-        let color = items[0].style.backgroundColor;
-        items[i].onmouseenter = function (x) {
-
-          x.currentTarget.style.backgroundColor = '#FFF';
-        };
-        items[i].onmouseleave = function (x) {
-          x.currentTarget.style.backgroundColor = color;
-        };
-      }
-      for (let i = 0; i < item.length; i++) {
-        let color = item[0].style.backgroundColor;
-        item[i].onmouseenter = function (x) {
-          x.currentTarget.style.backgroundColor = '#FFF';
-        };
-        item[i].onmouseleave = function (x) {
-          x.currentTarget.style.backgroundColor = color;
-        };
-      }
-    </script>
-    <script>        
-        var mySwiper = new Swiper ('.swiper-container', {
-          // direction: 'vertical', // 垂直切换选项
-          loop: true, // 循环模式选项
-          autoplay:true,
-          
-          // 如果需要分页器
-          pagination: {
-            el: '.swiper-pagination',
-          },
-          
-          // 如果需要前进后退按钮
-          navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-          },
-          
-          // 如果需要滚动条
-          // scrollbar: {
-          //   el: '.swiper-scrollbar',
-          // },
-        })        
-        </script>
+    <!-- 模块化 -->
+    <script src="init.js"></script>
+    <script src="NavigationHighlight.js"></script>
+    <script src="init-swiper.js"></script>
+    <script src="auto-slide-up.js"></script>
+    <script src="sticky-topbar.js"></script>
+    <script src="smoothly-navigation.js"></script>
+  </main>
+  <script>
+  </script>
 </body>
 
 </html>
