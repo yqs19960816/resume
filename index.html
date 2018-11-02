@@ -9,7 +9,9 @@
   <title>个人简历</title>
   <script src="https://at.alicdn.com/t/font_701076_x884vlms3ys0pb9.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css">
-  <link rel="stylesheet" href="style.css">
+  <!-- 存储服务 -->
+<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -199,18 +201,26 @@
         <div class="swiper-button-next"></div>
       </div>
     </section>
+    <section class="message">
+        <h2>留言板</h2>
+    <ol id="messageList"></ol>
+    <form id="postMessageForm">
+        <label for="name">姓名</label><input type="text" name="name" id="name">
+        <label for="content">内容</label><input type="text" name="content" id="content">
+      <input type="submit" value="提交">
+    </form>
+  </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
     <!-- 模块化 -->
-    <script src="init.js"></script>
-    <script src="NavigationHighlight.js"></script>
-    <script src="init-swiper.js"></script>
-    <script src="auto-slide-up.js"></script>
-    <script src="sticky-topbar.js"></script>
-    <script src="smoothly-navigation.js"></script>
+    <script src="./js/init.js"></script>
+    <script src="./js/NavigationHighlight.js"></script>
+    <script src="./js/init-swiper.js"></script>
+    <script src="./js/auto-slide-up.js"></script>
+    <script src="./js/sticky-topbar.js"></script>
+    <script src="./js/smoothly-navigation.js"></script>
+    <script src="./js/message.js"></script>
   </main>
-  <script>
-  </script>
 </body>
 
 </html>
